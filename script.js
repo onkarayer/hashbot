@@ -106,4 +106,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start particle animation
     setInterval(animateParticles, 5000);
+
+    // Contract address copy functionality
+    const contractAddressBtn = document.getElementById('contractAddress');
+    
+    contractAddressBtn.addEventListener('click', async () => {
+        const address = contractAddressBtn.querySelector('.address').textContent;
+        try {
+            await navigator.clipboard.writeText(address);
+            contractAddressBtn.classList.add('copied');
+            const icon = contractAddressBtn.querySelector('.copy-icon i');
+            icon.className = 'fas fa-check';
+            
+            setTimeout(() => {
+                contractAddressBtn.classList.remove('copied');
+                icon.className = 'fas fa-copy';
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy:', err);
+        }
+    });
 });
