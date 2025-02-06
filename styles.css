@@ -182,6 +182,52 @@ h2 {
     text-transform: uppercase;
 }
 
+.copy-address {
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.copy-address .label {
+    color: var(--primary);
+}
+
+.copy-address .address {
+    font-family: monospace;
+}
+
+.copy-address .copy-icon {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.copy-address:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+}
+
+.copy-address:hover .copy-icon {
+    opacity: 1;
+}
+
+.copy-address.copied {
+    background: rgba(121, 40, 202, 0.2);
+    border-color: var(--primary);
+}
+
+.copy-address.copied .copy-icon {
+    color: var(--primary);
+}
+
 .glow-button {
     padding: 15px 40px;
     font-size: 18px;
